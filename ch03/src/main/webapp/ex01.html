@@ -1,0 +1,73 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>마진과 패딩</title>
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "돋움", "맑은 고딕";
+	font-size: 0.8em;
+	color: #333;
+}
+
+.box1 {
+	border: 1px solid #666;
+	width: 300px;
+	background-color: #FFC;
+
+	/* padding값 표현하기! [margin값도 똑같음] */
+	/* 
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-bottom: 30px;
+	padding-left: 40px;
+	padding: 10px 20px 30px 40px;
+	*/
+	/*
+	padding-top: 30px;
+	padding-right: 20px;
+	padding-bottom: 50px;
+	padding-left: 20px;
+	padding: 30px 20px 50px 20px;
+	padding: 30px 20px 50px;
+	*/
+
+	/*
+	padding-top: 30px;
+	padding-right: 20px;
+	padding-bottom: 30px;
+	padding-left: 20px;
+	padding: 30px 20px 30px 20px;
+	padding:30px 20px;
+	*/
+	
+	/*
+	padding-top: 30px;
+	padding-right: 30px;
+	padding-bottom: 30px;
+	padding-left: 30px;
+	padding: 30px 30px 30px 30px;
+	padding: 30px 30px;
+	padding: 30px;
+	*/
+	
+	padding: 30px;
+	margin: 10px auto 10px auto; /* auto margin: 자동으로 값을 설정해줌 => width의 반값을 왼쪽, 오른쪽 margin값으로 설정=중앙정렬 */
+	width: 500px; /* style에 적용된 border나 padding값들이 다 포함되어서 실제는 500보다 크게 나옴! */
+	height: 50px; /* width와 같음! */
+}
+</style>
+</head>
+
+<body>
+	<div class="box1">CSS에서 가장 보편적이고 많이 사용하는 마진과 패딩에 대한 값이 어떻게 적용되는지
+		확인해 보겠습니다.</div>
+
+
+</body>
+</html>

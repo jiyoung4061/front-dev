@@ -48,8 +48,38 @@ body {
 }
 
 .box8 {
-	border: 4px solid;
+	/* 
+	border의 종류 - 4(방향) 	*	 3(속성) = 12가지 속성 및 방향의 개별적 styling이 가능하다! 
+			border-left		width
+			border-right	color
+			border-top		style
+			border-bottom
+	*/
+	border-right-width: 1px;
+	border-right-color: green;
+	border-top-style: double;
 
+	/*
+	12가지 속성별 방향의 단축형 
+	border-width: 1px 2px 3px 4px;
+	border-width: 1px 2px 3px;
+	border-width: 1px 2px;
+	border-width: 1px;
+	
+	border-color: red black yellow blue;
+	border-color: red black yellow;
+	border-color: red black;
+	border-color: red;
+	
+	border-style: double dotted dashed solid;
+	border-style: double dotted dashed;
+	border-style: double dotted;
+	border-style: double;
+	*/
+	
+	/* 보통은 다음과 같이 함 */
+	border: 1px solid #555;
+	
 }
 .box9 {
 	border: 4px none;

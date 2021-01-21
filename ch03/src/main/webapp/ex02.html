@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>마진과 패딩</title>
+<style type="text/css">
+* { margin:0; padding:0; }
+body {
+	font-family: "돋움", "맑은 고딕";
+	font-size: 0.8em;
+	color: #333;	
+	margin:0;
+	padding:0; 
+}
+.box1 {
+	margin:10px;
+	padding:10px;
+	border:1px solid #666;
+	width:300px;
+	height: 50px;
+	background-color: #FFC; 
+	margin: 0 auto;
+	cursor: pointer;
+}
+</style>
+<script>
+	var i = 10;
+	// var f = function () { // function도 객체이다!! var i = 10; 하면 number객체가 만들어지는것과 동일하게 함수 객체를 선언해주는 방법
+	// }
+
+	function onDivClicked(el) {
+		var marginTop = parseInt(el.style.marginTop); // margin-top하면 안됨!
+		// var intervalId = setInterval(f,1000); // 1초마다 f함수를 실행한다
+		var intervalId = setInterval(function () {
+			marginTop -= 10;
+			if(marginTop < -72) {
+				 clearInterval(intervalId); // interval 죽이기
+				 return;
+			}
+			el.style.marginTop = marginTop + "px";
+		},10);
+	}
+</script>
+</head>
+
+<body>
+<div class="box1" style="margin-top: 200px" onclick='onDivClicked(this)'>
+CSS에서 가장 보편적이고 많이 사용하는 마진과 패딩에 대한 값이 어떻게 적용되는지 확인해 보겠습니다.
+</div>
+
+</body>
+</html>
