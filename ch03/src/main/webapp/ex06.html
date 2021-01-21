@@ -4,9 +4,129 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>네이버 search box 만들기</title>
 <style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.header {
+	width: 1190px;
+	height: 56px;
+	margin: 50px auto 0 auto;
+}
+
+.header .logo, .header .search-box {
+	float: left;	
+}
+
+.header .logo {
+	width: 225px;
+	height: 54px;
+	text-indent: 110%;
+	font-size: 0;
+	background: url('images/naver.png') no-repeat 0 -158px;
+	background-size: 440px 410px;
+}
+
+.search-box {
+	position: absolute;
+    top: 30%;
+    left: 335px;
+    margin-top: -32px;
+    border: 2px solid #19ce60;
+    width: 582px;
+    height: 52px;
+}
+
+.search-box a, .search-box button, .search-box input {
+	display: block;
+	float: left;
+	outline: none;
+}
+
+.search-box input {
+	width: 444px;
+    height: 24px;
+    padding: 13px 15px;
+    margin: 1px;
+    background-color: #fff;
+    font-size: 18px;
+    line-height: 24px;
+   	border: 0;
+    color: #000;
+    font-weight: 700;
+	font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕",
+		helvetica, "Apple SD Gothic Neo", sans-serif; 
+}
+
+.search-box a, .search-box button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+	font-size: 0;
+}
+.search-box button {
+    right: 0;
+    width: 56px;
+    background-color: #19ce60;
+	border: 0px;
+}
+.search-box .keyboard {
+    right: 84px;
+    width: 36px;
+    z-index: 400;
+}
+.search-box .dropdown {
+    right: 64px;    
+    width: 22px;
+}
+
+.search-box span {
+	display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.search-box .search-icon {
+    width: 22px;
+    height: 22px;
+	background: url('images/naver.png') no-repeat -180px -386px; 
+	background-size: 440px 410px;
+}
+
+.search-box .keyboard-icon, .search-box .dropdown-icon {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.search-box .keyboard-icon {
+	background: url('images/naver.png') no-repeat -420px -248px;
+	background-size: 440px 410px;
+    width: 20px;
+    height: 12px;
+    margin: -6px 0 0 -10px;
+}
+.search-box .dropdown-icon {
+	background: url('images/naver.png') no-repeat -158px -151px;
+	background-size: 440px 410px;
+    width: 10px;
+    height: 5px;
+    margin: -2px 0 0 -5px;
+}
 </style>
 </head>
 <body>
-<input type="text" name="kwd" id="">
+	<div class="header">
+		<h1 class="logo">네이버</h1>
+		<div class="search-box">
+			<input type="text"> 
+			<a href="#" class="keyboard"><span class="keyboard-icon"></span>키보드</a> 
+			<a href="#" class="dropdown"><span class="dropdown-icon"></span>드롭다운</a>
+			<button>
+				<span class="search-icon"></span>돋보기
+			</button>
+		</div>
+	</div>
 </body>
 </html>
