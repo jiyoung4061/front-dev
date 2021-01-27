@@ -61,9 +61,12 @@ ul, ol {
 		if(liSelected.length == 1 ){		
 			liSelected[0].className = '';
 		}
+		// (liSelected.length == 1 ) && (liSelected[0].className = ''); // 위에 if문과 같은 문장!
+		// 앞에 조건이 true일 경우 뒤에 실행문 실행!
 		
 		// selected 하기
 		this.className = "selected";
+		
 	}
 	window.onload = function() {
 		let divTabBox = document.getElementsByClassName('tab-box')[0];
