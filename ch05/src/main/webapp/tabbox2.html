@@ -54,39 +54,43 @@ ul, ol {
 </style>
 <script type="text/javascript">
 	// 2) Javascript Code(DOM API)로만 작성하는 방식
-	var liSelected = null;
-	var onTabClicked = function() { // parameter를 설정안해줘도 자동으로 this는 해당 태그를 가리킴
-		var li = this;
+	// var liSelected = null;
+	let onTabClicked = function() { // parameter를 설정안해줘도 자동으로 this는 해당 태그를 가리킴
 		// unselected 하기
-		if (liSelected != null) {
-			liSelected.className = "";
+		let liSelected = document.getElementsByClassName('selected');
+		if(liSelected.length == 1 ){		
+			liSelected[0].className = '';
 		}
+		
 		// selected 하기
-		li.className = "selected";
-		liSelected = li;
+		this.className = "selected";
 	}
 	window.onload = function() {
-		document.getElementById("tab1").onclick = onTabClicked;
-		document.getElementById("tab2").onclick = onTabClicked;
-		document.getElementById("tab3").onclick = onTabClicked;
-		document.getElementById("tab4").onclick = onTabClicked;
-		document.getElementById("tab5").onclick = onTabClicked;
+		let divTabBox = document.getElementsByClassName('tab-box')[0];
+		// console.log(divTabBox.childNodes);
+		let ulTabBox = divTabBox.childNodes[1];
+		let liTabs = ulTabBox.getElementsByTagName('li');
+		// console.log(liTabs instanceof Array); // 결과 : false, 그런데 length가 5로 나왔으니 Object는 아님!! => 유사배열!!
+		// console.log(liTabs instanceof HTMLCollection); // 결과 : true 
+		Array.prototype.forEach.call(liTabs, function(li){
+			li.onclick = onTabClicked;
+		})
 	}
 </script>
 </head>
 <body>
 	<div class="tab-box">
 		<ul>
-			<li id="tab1">메뉴 1</li>
-			<li id="tab2">메뉴 2</li>
-			<li id="tab3">메뉴 3</li>
-			<li id="tab4">메뉴 4</li>
-			<li id="tab5">메뉴 5</li>
+			<li>메뉴 1</li>
+			<li>메뉴 2</li>
+			<li>메뉴 3</li>
+			<li>메뉴 4</li>
+			<li>메뉴 5</li>
 		</ul>
 		<div>탭뷰입니다.</div>
 	</div>
+	
 	<script>
-		
 	</script>
 </body>
 </html>
