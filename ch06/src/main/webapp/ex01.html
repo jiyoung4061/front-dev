@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+windowPropertyInfo = "";
+for(property in window) { // windows하면 MS window가 됨!
+	windowPropertyInfo += (property + " : " + window[property] + "\n");
+}
+console.log(window.windowPropertyInfo);
+
+// 팝업창
+setTimeout(function() {
+	// 팝업창 만드는 거보단 css를 활용해 div를 z-index로 띄워주는게 조음
+	let popup = window.open('popup.html', 'popup', 'width=600, height=400'); 
+	setTimeout(function() {
+		// 팝업창의 문서 내용 바꾸기
+		// 보안문제(Cross Origin, Cross Domain)때문에 같은 도메인에서만 가능하다!
+		popup.document.write('<h1>PopUp Text Changed!</h1>')
+	},2000);
+	
+	setTimeout(function(){
+		// popup창 이동
+		popup.moveTo(200,200);
+	}, 4000);
+	
+	setTimeout(function(){
+		// 팝업창에서 js 코드 실행하기
+		// 보안문제(Cross Origin, Cross Domain)때문에 같은 도메인에서만 가능하다!
+		popup.hello();		
+	}, 6000);
+}, 1000);
+</script>
+</head>
+<body>
+	<h1>BOM(Browser Object Model) - Window, location, screen, navigator</h1>
+	<h2>1. Window 전역 객체</h2>
+	<p>
+		<h5>property VS Attribute</h5>
+		property : DOM에 접근하는 것 - 내장되어있다! <br/>
+		Attribute : 내가 설정해서 추가하는것 ..?
+	</p>
+</body>
+</html> 

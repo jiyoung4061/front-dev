@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+<script>
+// 팝업창
+let popup = window.open('popup.html', 'popup', 'width=600, height=400');
+
+// 현재 모니터창이 width, height
+let widthScreen = screen.width;
+let heightScreen = screen.height;
+
+setTimeout(function(){
+	popup.moveTo(0, 0);
+	popup.resizeTo(widthScreen, heightScreen);
+	
+	setInterval(function() {
+		// 0.1초마다 가운데를 기준으로 사이즈 줄이기
+		popup.resizeBy(-20, -20);
+		popup.moveBy(10, 10);
+	}, 100)
+}, 2000);
+</script>
+</head>
+<body>
+	<h1>BOM(Browser Object Model) - Window, location, screen,
+		navigator</h1>
+	<h2>2. Screen 객체</h2>
+	<p>
+		
+	</p>
+</body>
+</html>
