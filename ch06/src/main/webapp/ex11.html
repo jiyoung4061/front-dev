@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+// <=IE8대응(Cross-browser) 이벤트 등록
+let registerEventHandler = function(element, eventName, handler){
+	
+}
+window.addEventListener('load', function(){
+	let header = document.getElementById('header');
+	let clickEventListener = function(){
+		console.log('click1');
+	}
+	
+	header.addEventListener('click', clickEventListener);
+	header.addEventListener('click', function(){
+		console.log('click2');
+	});
+	
+	// Listener 제거하기
+	// header.removeEventListener('click', clickEventListener);
+	
+	// <=IE8 지원해야 할 경우( <=IE8 대응) 
+})
+</script>
+</head>
+<body>
+	<h1 id='header'>Click!</h1>
+</body>
+</html>
