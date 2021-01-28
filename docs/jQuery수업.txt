@@ -1,0 +1,14 @@
+jQuery란?
+1. 클라이언트의 DOM 조작을 쉽게할 수 있도록 작성된 JavaScript Library
+2. 2006년도 존레식
+3. DOM 탐색 및 수정
+4. Event 처리
+5. Cross Browsing 제공
+6. ajax/JSON parsing 지원
+7. 플러그인을 통한 확장성
+	* 플러그인? jQuery prototype에 메소드를 내가 새로 정의해 추가하는 것!
+
+2006  v1.0
+2009  v1.3	<- sizzle.js embedded
+	  v2.0	: <=IE8 지원 X
+2016  v3.0	: ES6 비동기 지원

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- 개발소스 버전(내서버 호스팅) -->
+<script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
+
+<!-- 압축버전(내 서버 호스팅) -->
+<!-- <script type="text/javascript" src="jquery/jquery-3.5.1.min.js"></script> -->
+
+<!-- CDN 호스팅 -->
+<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+
+<script>
+// 1. jQuery는 함수 객체이다.
+// 2. jQuery 함수를 호출하면 seletor 파라미터에 해당하는 HTMLElement를 가지고 있는 유사 배열 객체(jquery 객체)를 반환한다.
+// 3. $는 jQuery 함수객체를 참조한다.($는 jQuery함수 이름의 alias이다)
+
+// 버전확인 
+console.log($().jquery);
+
+// jQuery 객체
+let $obj01 = jQuery();
+console.log(typeof($obj01), typeof(jQuery));
+
+let $obj02 = $();
+console.log(typeof($obj02), typeof($));
+
+
+
+
+</script>
+</head>
+<body>
+	<h1>jQuery 로딩</h1>
+</body>
+</html>
+ 
