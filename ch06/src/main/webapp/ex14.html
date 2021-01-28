@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+// Event Propagation(Bubbling)
+// 특정 element에 이벤트가 발생했을 때, 그 이벤트가 상위로 전파되는 것
+// <=IE8	: outer-div > inner-div > header > text
+// standard : outer-div < inner-div < header < text
+
+window.addEventListener('load', function(){
+	document.getElementById('outer-div').addEventListener('click', function(){
+		console.log('outer-div');
+	});
+	
+	document.getElementById('inner-div').addEventListener('click', function(e){
+		let event = e || window.event; // <=IE8대응(cross browser)
+		
+		// prevent propagation(bubbling)
+		event.cancelBubbling = true; // <=IE8
+		event.stopPropagation && event.stopPropagation(); // standard others : propagation stop하는 함수가 있다면 실행!
+		
+		console.log('inner-div');
+	});
+	
+	document.getElementById('header').addEventListener('click', function(){
+		console.log('header');
+	});
+	
+	document.getElementById('text').addEventListener('click', function(){
+		console.log('text');
+	});
+});
+</script>
+</head>
+<body>
+	<div id='outer-div'>
+		<div id='inner-div'>
+			<h1 id='header'>
+				<span id='text'>Text</span>
+			</h1>
+		</div>
+	</div>
+	<p>
+		Event Propagation <br/>
+		Event Bubbling <br/>
+			[ text -> header -> outer-div ] 순으로 표준 browser에서는 자식에서 부모순으로 전파가 됨! 
+	</p>
+	<h3>Event Propagation을 막는 방법</h3>
+	<p>
+		1. background를 준다 <br/>
+		2. stopPropagation 함수를 사용
+	</p>
+</body>
+</html>
