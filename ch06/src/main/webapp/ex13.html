@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+// 이벤트 기본 동작 막기
+// form : validation
+// a : 버튼이나 메뉴로 사용하는 경우(click 이벤트) + Ajax 통신(자바스크립트 코드가 실행)인 경우
+
+window.addEventListener('load', function(){
+	let form = document.getElementById('form-login');
+	
+	// 방법1 (model 1) => 더 표준방법!
+	form.addEventListener('submit', function(event){
+		event.preventDefault();
+		
+		let inputEmail = document.getElementById('email');
+		if(inputEmail.value == ''){
+			alert('Empty Email!');
+			inputEmail.focus();
+			return;
+		}
+		let inputPassword = document.getElementById('password');
+		if(inputPassword.value == ''){
+			alert('Empty Password!');
+			inputPassword.focus();
+			return;
+		}
+		
+		this.submit();
+	});
+	
+	// 방법 2(Model 0)
+	/*
+	form.onsubmit = function(){
+		let inputEmail = document.getElementById('email');
+		if(inputEmail.value == ''){
+			alert('Empty Email!');
+			inputEmail.focus();
+			return false;
+		}
+		let inputPassword = document.getElementById('password');
+		if(inputPassword.value == ''){
+			alert('Empty Password!');
+			inputPassword.focus();
+			return false;
+		}
+		
+		return true;
+	};
+	*/
+});
+</script>
+</head>
+<body>
+	<h1>Event 기본 동작 막기 : &lt;form&gt; </h1>
+	<form id='form-login' method='post' action='/user/auth'>
+		<label>Email</label>
+		<br/>
+		<input name="email" type="text" id='email' />
+		<br/>
+		<br/>
+		
+		<label>Password</label>
+		<br/>
+		<input name="password" type="password" id='password' />
+		<br/>
+		<br/>
+		
+		<input type="submit" value='login' />
+	</form>
+</body>
+</html>

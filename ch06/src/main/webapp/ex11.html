@@ -6,7 +6,14 @@
 <script type="text/javascript">
 // <=IE8대응(Cross-browser) 이벤트 등록
 let registerEventHandler = function(element, eventName, handler){
+	element &&				// element가 null이 아니면
+	element.attachEvent &&	// <=IE8
+	element.attachEvent(eventName, handler);
+	//	element && element.attachEvent && element.attachEvent(eventName, handler);
 	
+	element &&					// element가 null이 아니면
+	element.addEventListener &&	// standard others
+	element.addEventListener(eventName, handler);	
 }
 window.addEventListener('load', function(){
 	let header = document.getElementById('header');
@@ -22,8 +29,11 @@ window.addEventListener('load', function(){
 	// Listener 제거하기
 	// header.removeEventListener('click', clickEventListener);
 	
-	// <=IE8 지원해야 할 경우( <=IE8 대응) 
-})
+	// <=IE8 지원해야 할 경우( <=IE8 대응)
+	registerEventHandler(header, 'click', function(){
+		console.log('click3');
+	});
+});
 </script>
 </head>
 <body>
