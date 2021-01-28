@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+window.addEventListener('load', function() {
+	let html = "<h1>Hello DOM</h1>";
+	
+	setTimeout(function() {
+		/* 아래두줄을 한줄로 처리한 것
+		var s = document.body.innerHTML + html;
+		document.body.innerHTML = s;
+		*/
+		document.body.innerHTML += html;
+	}, 2000)
+});
+
+</script>
+</head>
+<body>
+	<h1> HTML Element(DOM's Node) 만들기02 </h1>
+	
+	
+</body>
+</html>

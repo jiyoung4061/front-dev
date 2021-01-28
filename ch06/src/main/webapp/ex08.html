@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+<script type="text/javascript">
+window.addEventListener('load', function() {
+	var imgEl = document.createElement('img');
+	
+	// 표준 + 비표준 속성에 접근하기 위해서는 setAttribute 함수를 사용한다. 
+	imgEl.setAttribute('src', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Golde33443.jpg/280px-Golde33443.jpg')
+	imgEl.setAttribute('width', 400);
+	imgEl.setAttribute('alt', '강아지');
+	imgEl.setAttribute('title', '강아지');
+	imgEl.setAttribute('data-name', '강아지');
+	
+	setTimeout(function(){
+		document.body.appendChild(imgEl);
+	}, 2000)
+})
+</script>
+</head>
+<body>
+	<h1 >HTML Element 속성 조작하기</h1>
+</body>
+</html>

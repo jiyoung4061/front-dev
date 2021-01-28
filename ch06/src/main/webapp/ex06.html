@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/* 
+ 	아래와 똑같은 방법이지만 잘 안쓰임!
+ 	window.onload = function() {
+		console.log('1');
+	}
+*/
+window.addEventListener('load', function() {
+	var h1El = document.createElement('h1'); // 노드 생성만 할 뿐 DOM안에서 연결되어 있지는 않음!
+	console.log(typeof(h1El) + " : " + (h1El instanceof HTMLElement));
+	
+	// h1태그안에 textNode 삽입
+	let textNode = document.createTextNode('Hello DOM');
+	h1El.append(textNode);
+	
+	setTimeout(function() {	
+		document.body.appendChild(h1El);
+	}, 2000)
+});
+
+</script>
+</head>
+<body>
+	<h1> HTML Element(DOM's Node) 만들기01 </h1>
+	
+	
+</body>
+</html>
