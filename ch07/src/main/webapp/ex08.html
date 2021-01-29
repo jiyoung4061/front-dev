@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset='UTF-8'>
+<title>sample1</title>
+<script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+// 선택자 - 하위
+$(function() {
+	setTimeout(function() {
+		$('.red strong').css('color', '#f00');
+		$('.blue strong#s1').css('color', '#00f');
+		$('.blue #s2').css('color', '#00f').css('text-decoration', 'underline'); // textDecoration으로 해도됨!
+		$('.blue #s2').css({
+			color : '#00f',
+			textDecoration : 'underline'
+		});
+	}, 2000);
+});
+</script>
+</head>
+<body>
+	<ul>
+		<li class="red"><strong> 텍스트 </strong> 텍스트 텍스트 텍스트 텍스트</li>
+		<li class="blue"><strong id="s1"> 텍스트 </strong> 텍스트 텍스트 텍스트 텍스트</li>
+		<li class="red"><strong> 텍스트 </strong> 텍스트 텍스트 텍스트 텍스트</li>
+		<li class="blue"><strong id="s2"> 텍스트 </strong> 텍스트 텍스트 텍스트 텍스트</li>
+	</ul>
+</body>
+</html>
