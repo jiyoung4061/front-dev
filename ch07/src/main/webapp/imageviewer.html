@@ -3,6 +3,7 @@
 <head>
 <meta charset='UTF-8'>
 <title>sample1</title>
+<link href='css/imageviewer.css' rel='stylesheet' type='text/css'/>
 <script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
 <script type="text/javascript" src="js/imageviewer.js"></script>
 <script type="text/javascript">
@@ -12,9 +13,10 @@ ImageViewer.init();
 <body>
 	<div class='image-viewer'>
 		<div class='buttons'>
-			<button id='btn-change'>화면을 변경</button>
+			<button id='btn-change'>이미지 변경</button>
+			<button id='btn-slide'>슬라이드 시작</button>
 		</div>
-		<div>
+		<div class='view'>
 			<img />
 		</div>
 	</div>
