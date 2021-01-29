@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset='UTF-8'>
+<title>sample1</title>
+<script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+// 선택자 - jQuery 필터(even, odd) 
+$(function() {
+	setTimeout(function() {
+		$('li:even').css('backgroundColor', '#00f');
+		$('li:odd').css('backgroundColor', '#f00');
+	}, 2000);
+});
+</script>
+</head>
+<body>
+	<ul>
+		<li id='first'>텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li class='second'>텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li id='third'>텍스트 텍스트 텍스트 텍스트</li>
+		<li class='fourth'>텍스트텍스트텍스트텍스트</li>
+	</ul>
+	<ul>
+		<li>dog</li>
+		<li>cat</li>
+		<li>cow</li>
+		<li>horse</li>
+	</ul>
+</body>
+</html>

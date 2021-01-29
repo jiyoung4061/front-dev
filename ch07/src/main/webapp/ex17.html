@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset='UTF-8'>
+<title>sample1</title>
+<script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+// 선택자 - jQuery 필터(has, contains) 
+$(function() {
+	setTimeout(function() {
+		$('li:contains("샘플")').css('backgroundColor', '#00f');
+		$('li:has("strong")').css('backgroundColor', '#f00');
+	}, 2000);
+});
+</script>
+</head>
+<body>
+	<ul>
+		<li><strong>텍스트</strong> 텍스트 텍스트 텍스트 텍스트</li>
+		<li>텍스트 텍스트 텍스트 텍스트</li>
+		<li>텍스트 텍스트 텍스트 텍스트 텍스트</li>
+		<li>텍스트 텍스트 샘플 텍스트 텍스트</li>
+	</ul>
+</body>
+</html>

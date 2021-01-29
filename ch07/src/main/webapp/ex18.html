@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset='UTF-8'>
+<title>sample1</title>
+<script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+// API 함수 - text() 
+$(function() {
+	setTimeout(function() {
+		$('#p1').text('안녕하세요');
+		$('#p2').text('<strong>안녕하세요</strong>');
+		
+		console.log($('#p3').text());
+		console.log($('#p4').text());
+	}, 2000);
+	
+	let blink = false;
+	setInterval(function(){
+		$('#heart').css('color', (blink ? 'red' : 'white') );
+		blink = !blink;
+	}, 500);
+});
+</script>
+</head>
+<body>
+	<p id='p1'></p>
+	<p id='p2'></p>
+	<p id='p3'>안녕하세요</p>
+	<p id='p4'><strong>안녕하세요</strong>라고 인사를 하면 <em>쌩</em>깐다</p>
+	
+	
+	<!-- 
+	HTML escape 문자
+	&		->	&amp;
+	space	->	&nbsp;
+	<		->	&lt;
+	>		->	&gt;
+	"		->	&quot;
+	
+	HTML symbol 문자
+	
+	&alpha;
+	&beta;
+	&pi;
+	&trade;
+	&reg;
+	&copy;
+	&heartsuit;
+	&spadesuit;
+	&clubsuit;
+	 -->
+	<h2>Black &amp; White</h2>
+	<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+	<span id='heart'>&heartsuit;</span>
+</body>
+</html>
