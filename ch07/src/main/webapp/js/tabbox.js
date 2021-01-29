@@ -1,4 +1,6 @@
-// jQuery Based
+/**
+ * jQuery Based
+ */
 const TabBox = {	
 	init: function(){
 		$(this._init);
