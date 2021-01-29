@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset='UTF-8'>
+<title>sample1</title>
+<script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+// API 함수 - appendTo()
+$(function() {
+	setTimeout(function() {
+		$('p strong').appendTo('#p1');
+	}, 2000);
+});
+</script>
+</head>
+<body>
+	<p id='p1'>ABCDEFGHIJKLMNOPQRSTU</p>
+	<p>abcdefghijklmnopqrstu<strong>VWXYZ</strong></p>
+</body>
+</html>

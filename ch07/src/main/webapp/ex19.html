@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset='UTF-8'>
+<title>sample1</title>
+<script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+// API 함수 - text() 
+$(function() {
+	setTimeout(function() {
+		$('#p1').html('<strong>안녕하세요</strong>');
+		console.log($('#p2').html());
+	}, 2000);
+});
+</script>
+</head>
+<body>
+	<p id='p1'>이 안에 HTML을 바꿉니다.</p>
+	<p id='p2'><strong>안녕하세요</strong></p>
+</body>
+</html>

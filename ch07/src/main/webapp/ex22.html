@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset='UTF-8'>
+<title>sample1</title>
+<script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+// API 함수 - before()
+$(function() {
+	setTimeout(function() {
+		$('#p1').before('<h1>타이틀입니다.</h1>')
+	}, 2000);
+});
+</script>
+</head>
+<body>
+	<p id='p1'>
+		내용입니다.
+	</p>
+</body>
+</html>
