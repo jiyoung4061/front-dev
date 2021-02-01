@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('button').click(function(){
+		$.ajax({
+			url: '/ch07/data.json',
+			async: true,			// default
+			type: 'get',
+			// data: 'n=10 & name = sjdlfk', 		// post방식일때 data 보내는 방법
+			// contentType: 'application/json',		// post방식으로 보내는 data의 형식: application/json or text/html
+			dataType: 'json', 						// 받는 data 형식
+			success: function(response){ 
+				if(response.result == 'success'){
+					console.error(response.message); // 통신은 성공 but, db query나 다른 문제로 데이터가 못넘어옴
+					return;
+				}
+				
+				// data 처리 부분
+				let html = "";
+				response.data.forEach(function(d){ 		// Array라서 forEach 가능!			
+					html += "<dt>" + d.title + "</dt>";
+					html += "<dd>" + d.description + "</dd>";
+				});
+				
+				$('dl').append(html);
+			},
+			error: function(XHR, status, e){ // 통신 실패할 경우 callback 함수
+				console.error(status + ":" + e);
+			},
+		});
+	});
+});
+</script>
+</head>
+<body>
+	<button>XML 가져오기</button>
+	<dl>
+	</dl>
+</body>
+</html>

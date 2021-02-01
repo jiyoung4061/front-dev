@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('button').click(function(){
+		$.ajax({
+			url: '/ch07/data.xml',
+			dataType: 'xml',
+			success: function(data){ // callback함수
+				// console.log(data);
+				// $('item', data).forEach() // => 불가능!! 유사배열이라서 Array.prototype.forEach.call($('item', data)) 이런식으로 써야함 
+				$('item', data).each(function(){					
+					/*
+					let title= $('title', this).text();
+					let desc = $('description', this).text();
+					let html = "";
+					html += "<dt>" + title + "</dt>";
+					html += "<dd>" + desc + "</dd>";
+					*/
+					
+					let html = "";
+					html += "<dt>" + $('title', this).text() + "</dt>";
+					html += "<dd>" + $('description', this).text() + "</dd>";
+					
+					$('dl').append(html);
+				});
+			}
+		});
+	});
+});
+</script>
+</head>
+<body>
+	<button>XML 가져오기</button>
+	<dl>
+	</dl>
+</body>
+</html>

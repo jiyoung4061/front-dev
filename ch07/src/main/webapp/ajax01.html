@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('button').click(function(){
+		$('p').load('http://localhost:8080/ch07/data.txt');
+	});
+});
+</script>
+</head>
+<body>
+	<button>변경</button>
+	<p>변경전</p>
+</body>
+</html>
